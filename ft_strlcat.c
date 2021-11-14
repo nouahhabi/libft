@@ -1,16 +1,30 @@
-unsigned int	ft_min(unsigned int a, unsigned int b)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/12 19:44:50 by nouahhab          #+#    #+#             */
+/*   Updated: 2021/11/13 23:20:07 by nouahhab         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static size_t	ft_min(size_t a, size_t b)
 {
 	if (a > b)
 		return (b);
 	return (a);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	len_dest;
-	unsigned int	len_src;
-	unsigned int	i;
-	unsigned int	output;
+	size_t	len_dest;
+	size_t	len_src;
+	size_t	i;
+	size_t	output;
 
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);

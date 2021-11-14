@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 19:35:27 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/11/13 23:15:57 by nouahhab         ###   ########.fr       */
+/*   Created: 2021/11/14 00:33:51 by nouahhab          #+#    #+#             */
+/*   Updated: 2021/11/14 00:35:13 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	unsigned int	is_neg;
-	unsigned int	res;
+	int		i;
+	int		j;
+	char	*p;
 
-	is_neg = 1;
 	i = 0;
-	res = 0;
-	while (((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ') && str[i])
-		i++;
-	if (str[i] == '-')
+	j = 0;
+	if (!s1 || !s2)
+		return (0);
+	p = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1 * sizeof(char));
+	if (!p)
+		return (0);
+	while (s1[i])
 	{
-		is_neg *= -1;
+		p[j] = s1[i];
 		i++;
+		j++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9' && str[i])
+	i = 0;
+	while (s2[i])
 	{
-		res = res * 10 + (str[i] - '0');
+		p[j] = s2[i];
 		i++;
+		j++;
 	}
-	return (res * is_neg);
+	p[j] = '\0';
+	return (p);
 }
