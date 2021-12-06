@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 19:40:56 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/12/05 00:27:27 by nouahhab         ###   ########.fr       */
+/*   Created: 2021/11/30 01:48:13 by nouahhab          #+#    #+#             */
+/*   Updated: 2021/12/05 23:59:33 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy( void *dest, const void *src, size_t size )
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
-	if (!dest && !src)
-		return (0);
-	while (i < size)
+	while (s[i])
 	{
-		*(char *)(dest + i) = *(char *)(src + i);
+		(*f)(i, &s[i]);
 		i++;
 	}
-	return (dest);
 }
 
-	//#include<stdio.h>
-	//int main()
-	//{
-	//	 char *str = ft_strdup("    test");
-	//	 const char *s = ft_strdup("fhgf");
+//void func(unsigned int i, char *c) {
+//	*c += 1;
+//}
 
-	//	char *p =ft_memcpy(str, s, 3);
-	//	printf("%s",p);
-	//	free(str);
-	//	free((char *)s);
-	//}
+//int main () {
+//	char *str = ft_strdup("abcdef");
+//	ft_striteri(str, &func);
+//	ft_putstr_fd(str, 1);
+//	free(str);
+//}

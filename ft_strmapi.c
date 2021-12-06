@@ -1,39 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 22:44:24 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/12/05 01:43:23 by nouahhab         ###   ########.fr       */
+/*   Created: 2021/11/29 23:54:04 by nouahhab          #+#    #+#             */
+/*   Updated: 2021/12/06 04:36:35 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*p;
+	unsigned int		i;
+	char				*p;
 
 	i = 0;
-	p = malloc((ft_strlen(s1) + 1) * sizeof(char));
+	if (!s)
+		return (0);
+	p = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!p)
-		return (NULL);
-	while (s1[i])
+		return (0);
+	while (s[i])
 	{
-		p[i] = s1[i];
+		p[i] = (*f)(i, s[i]);
 		i++;
 	}
 	p[i] = '\0';
 	return (p);
 }
-//#include <stdio.h>
+
+//char uppercase(unsigned int i, char c)
+//{
+//	if (c <= 122 && c >= 97)
+//		return (c - 32);
+//	return c;
+//}
+
 //int main()
 //{
-//	char *str="dkhd";
-//	char *p=ft_strdup(str);
-//	printf("%s",p);
+//	char *s=ft_strdup("bhdbhl&&&jlb156549");
+//	char *p=ft_strmapi(s, &uppercase);
+
+//	ft_putendl_fd(p,1);
 //}

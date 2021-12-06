@@ -2,17 +2,17 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
-/*                                                     +:+ +:+         +:+     */
+/*                                                    +:+ +:+         +:+     */
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 19:38:47 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/11/12 22:56:16 by nouahhab         ###   ########.fr       */
+/*   Updated: 2021/12/04 20:42:01 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    return (c >= 32 && c <= 126);
+	return (c >= 32 && c <= 126);
 }

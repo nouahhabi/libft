@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 19:40:56 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/12/05 00:27:27 by nouahhab         ###   ########.fr       */
+/*   Created: 2021/12/06 03:04:21 by nouahhab          #+#    #+#             */
+/*   Updated: 2021/12/06 03:38:31 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy( void *dest, const void *src, size_t size )
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t	i;
-
-	i = 0;
-	if (!dest && !src)
-		return (0);
-	while (i < size)
+	if (!lst)
+		return ;
+	while (lst)
 	{
-		*(char *)(dest + i) = *(char *)(src + i);
-		i++;
+		(*f)(lst->content);
+		lst = lst->next;
 	}
-	return (dest);
 }
-
-	//#include<stdio.h>
-	//int main()
-	//{
-	//	 char *str = ft_strdup("    test");
-	//	 const char *s = ft_strdup("fhgf");
-
-	//	char *p =ft_memcpy(str, s, 3);
-	//	printf("%s",p);
-	//	free(str);
-	//	free((char *)s);
-	//}

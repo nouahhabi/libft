@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 19:40:56 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/12/05 00:27:27 by nouahhab         ###   ########.fr       */
+/*   Created: 2021/11/30 00:16:10 by nouahhab          #+#    #+#             */
+/*   Updated: 2021/12/05 01:19:43 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy( void *dest, const void *src, size_t size )
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	if (!dest && !src)
-		return (0);
-	while (i < size)
-	{
-		*(char *)(dest + i) = *(char *)(src + i);
-		i++;
-	}
-	return (dest);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
 
-	//#include<stdio.h>
-	//int main()
-	//{
-	//	 char *str = ft_strdup("    test");
-	//	 const char *s = ft_strdup("fhgf");
+//#include<fcntl.h>
+//int main()
+//{
+//	int test=open("./test", O_WRONLY);
 
-	//	char *p =ft_memcpy(str, s, 3);
-	//	printf("%s",p);
-	//	free(str);
-	//	free((char *)s);
-	//}
+//	ft_putendl_fd("g.akej",test);
+//	close(test);
+//}

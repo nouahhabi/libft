@@ -6,15 +6,15 @@
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 19:46:32 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/11/12 19:46:34 by nouahhab         ###   ########.fr       */
+/*   Updated: 2021/12/04 21:22:40 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower( int c)
+int	ft_tolower(	int c)
 {
-    if (c >= 65 && c<= 90)
-        c += 32;
-    return (c);
+	if (c >= 65 && c <= 90)
+		c += 32;
+	return (c);
 }

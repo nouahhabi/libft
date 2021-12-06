@@ -6,14 +6,23 @@
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 19:37:08 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/11/12 22:56:06 by nouahhab         ###   ########.fr       */
+/*   Updated: 2021/12/06 05:03:02 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    return (c >= 0 && c <= 127);
+	return (c >= 0 && c <= 127);
 }
+
+//#include<stdio.h>
+//int main()
+//{
+//	int c1= 'a';
+//	int c3= ' ';
+//	int c4= '&';
+
+//	printf("%d", ft_isascii(c3));
+//}

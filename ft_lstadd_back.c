@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 19:40:56 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/12/05 00:27:27 by nouahhab         ###   ########.fr       */
+/*   Created: 2021/12/06 01:24:06 by nouahhab          #+#    #+#             */
+/*   Updated: 2021/12/06 03:47:05 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy( void *dest, const void *src, size_t size )
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	size_t	i;
+	t_list	*head;
 
-	i = 0;
-	if (!dest && !src)
-		return (0);
-	while (i < size)
+	if (!(*alst))
 	{
-		*(char *)(dest + i) = *(char *)(src + i);
-		i++;
+		*alst = new;
+		return ;
 	}
-	return (dest);
+	head = *alst;
+	while ((*alst)->next)
+		*alst = (*alst)->next;
+	(*alst)->next = new;
+	*alst = head;
 }
-
-	//#include<stdio.h>
-	//int main()
-	//{
-	//	 char *str = ft_strdup("    test");
-	//	 const char *s = ft_strdup("fhgf");
-
-	//	char *p =ft_memcpy(str, s, 3);
-	//	printf("%s",p);
-	//	free(str);
-	//	free((char *)s);
-	//}

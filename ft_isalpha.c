@@ -6,16 +6,26 @@
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 19:36:50 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/11/12 19:36:55 by nouahhab         ###   ########.fr       */
+/*   Updated: 2021/12/04 23:15:04 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-        return (1);
-    else
-        return (0);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }
+
+//#include<stdio.h>
+//int main()
+//{
+//	int c1= 'a';
+//	int c3= '9';
+//	int c4= '&';
+
+//	printf("%d", ft_isalpha(c4));
+//}

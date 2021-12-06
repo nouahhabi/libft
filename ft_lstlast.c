@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 22:44:24 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/12/05 01:43:23 by nouahhab         ###   ########.fr       */
+/*   Created: 2021/12/06 01:15:37 by nouahhab          #+#    #+#             */
+/*   Updated: 2021/12/06 04:39:30 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		i;
-	char	*p;
+	t_list	*head;
+	t_list	*p;
 
-	i = 0;
-	p = malloc((ft_strlen(s1) + 1) * sizeof(char));
-	if (!p)
+	if (!lst)
 		return (NULL);
-	while (s1[i])
-	{
-		p[i] = s1[i];
-		i++;
-	}
-	p[i] = '\0';
+	head = lst;
+	while (lst->next)
+		lst = lst->next;
+	p = lst;
+	lst = head;
 	return (p);
 }
-//#include <stdio.h>
-//int main()
+
+//int main ()
 //{
-//	char *str="dkhd";
-//	char *p=ft_strdup(str);
-//	printf("%s",p);
+//	t_list	*list;
+
+//	list = ft_lstnew(ft_strdup("hh"));
+//	list->next = ft_lstnew(ft_strdup("gg"));
+//	list->next->next = ft_lstnew(ft_strdup("jj"));
+//	list->next->next->next = ft_lstnew(ft_strdup("kk"));
+
+//	t_list *ret = ft_lstlast(list);
+//	ft_putendl_fd(ret->content, 1);
+
 //}

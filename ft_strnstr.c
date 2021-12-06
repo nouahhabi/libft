@@ -6,7 +6,7 @@
 /*   By: nouahhab <nouahhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 19:45:57 by nouahhab          #+#    #+#             */
-/*   Updated: 2021/11/12 23:44:13 by nouahhab         ###   ########.fr       */
+/*   Updated: 2021/12/05 23:04:02 by nouahhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+//#include <stdio.h>
+//int main()
+//{
+//	char *str = ft_strdup("nouratestnoura");
+//	char *s = ft_strdup("test");
+//	char *p= ft_strnstr (str, s, 6);
+//	printf("%s\n",p);
+//}
